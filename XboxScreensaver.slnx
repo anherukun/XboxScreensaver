@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Screensaver/Screensaver.csproj" />
+  <Project Path="ScreensaverController/ScreensaverController.csproj" />
+</Solution>
