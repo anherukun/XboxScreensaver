@@ -1,0 +1,12 @@
+[
+  {
+    "title": "Uso de CPU",
+    "content": "La CPU se encuentra trabajando dentro de parámetros normales.",
+    "image": "cpu.png"
+  },
+  {
+    "title": "Temperatura",
+    "content": "La temperatura actual es de 27°C.",
+    "image": "temp.png"
+  }
+]

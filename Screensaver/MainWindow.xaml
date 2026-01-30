@@ -5,11 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Screensaver"
         mc:Ignorable="d"
-        Height="450" Width="800" 
+        Height="1080" Width="1920" 
         Title="MainWindow" WindowStyle="None" 
         AllowsTransparency="True" 
         WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
-        Loaded="Window_Loaded" Background="{x:Null}" WindowState="Maximized">
+        Loaded="Window_Loaded" Background="{x:Null}" WindowState="Maximized"
+        KeyDown="Window_KeyDown" Closed="Window_Closed">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -24,7 +25,7 @@
             Text="12:00 AM" Padding="52 0 0 52" 
             VerticalAlignment="Bottom"
             Foreground="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}" 
-            FontWeight="Bold" FontSize="38"
+            FontWeight="Bold" FontSize="48"
             Loaded="Clock_Loaded"/>
         <Grid 
             x:Name="Panel" Grid.Column="1" 
@@ -33,11 +34,31 @@
             <Grid.RenderTransform>
                 <TranslateTransform x:Name="PanelTransform"/>
             </Grid.RenderTransform>
-            <TextBlock 
-                Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." 
-                Padding="32"
-                Foreground="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}" 
-                TextWrapping="WrapWithOverflow" FontSize="24"/>
+
+            <Grid Margin="32 32 32 52">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                
+                <TextBlock x:Name="TitleText" Grid.Row="0" Text="Titulo"
+                           FontWeight="Bold" FontSize="48"
+                           Foreground="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
+                
+                <TextBlock x:Name="BodyText" Grid.Row="1"
+                    Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." 
+                    FontWeight="SemiBold" FontSize="24"
+                    Foreground="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}" 
+                    TextWrapping="WrapWithOverflow"/>
+
+                <StackPanel Grid.Row="3" Orientation="Horizontal" FlowDirection="RightToLeft">
+                    <TextBlock Text="Press any button to close"
+                               FontWeight="SemiBold" FontSize="24"
+                               Foreground="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
+                </StackPanel>
+            </Grid>
         </Grid>
     </Grid>
 </Window>

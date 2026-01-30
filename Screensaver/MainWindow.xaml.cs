@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows;
@@ -113,6 +114,13 @@ namespace Screensaver
             Background.BeginAnimation(OpacityProperty, animation);
         }
 
+        private void Window_KeyDown(object sender, KeyEventArgs e) => this.Close();
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            HidePanelAnimation(sender, e);
+        }
+
         private void ShowPanelAnimation(object? sender, EventArgs e)
         {
             var animation = new DoubleAnimation
@@ -130,9 +138,10 @@ namespace Screensaver
         {
             var animation = new DoubleAnimation
             {
-                From = Panel.ActualWidth,
-                To = 0,
-                Duration = TimeSpan.FromMilliseconds(500)
+                From = 0,
+                To = Panel.ActualWidth,
+                Duration = TimeSpan.FromMilliseconds(500),
+                EasingFunction = new SineEase { EasingMode = EasingMode.EaseInOut }
             };
 
             Panel.BeginAnimation(TranslateTransform.XProperty, animation);
@@ -154,7 +163,8 @@ namespace Screensaver
                 textBlock.Text = $"{DateTime.Now.ToString("hh:mm tt")}";
             };
             timer.Start();
-
         }
+
+        
     }
 }
