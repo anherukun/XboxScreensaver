@@ -8,7 +8,7 @@
         Height="1080" Width="1920" 
         Title="MainWindow" WindowStyle="None" 
         AllowsTransparency="True" ResizeMode="NoResize"
-        Loaded="Window_Loaded" Background="{x:Null}"
+        Loaded="Window_Loaded" Background="Transparent"
         KeyDown="Window_KeyDown" Closed="Window_Closed" WindowState="Maximized" Cursor="None">
 
     <Grid>

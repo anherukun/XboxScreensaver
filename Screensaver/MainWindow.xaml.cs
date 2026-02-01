@@ -111,12 +111,12 @@ namespace Screensaver
 
         private void SetupScreensaver()
         {
-            WindowStyle = WindowStyle.None;
-            ResizeMode = ResizeMode.NoResize;
-            WindowState = WindowState.Maximized;
-            Topmost = true;
+            //WindowStyle = WindowStyle.None;
+            //ResizeMode = ResizeMode.NoResize;
+            //WindowState = WindowState.Maximized;
+            //Topmost = true;
             ShowInTaskbar = false;
-            Cursor = Cursors.None;
+            //Cursor = Cursors.None;
         }
 
         internal void EnableBlur()
