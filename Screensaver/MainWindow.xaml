@@ -7,10 +7,9 @@
         mc:Ignorable="d"
         Height="1080" Width="1920" 
         Title="MainWindow" WindowStyle="None" 
-        AllowsTransparency="True" 
-        WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
-        Loaded="Window_Loaded" Background="{x:Null}" WindowState="Maximized"
-        KeyDown="Window_KeyDown" Closed="Window_Closed">
+        AllowsTransparency="True" ResizeMode="NoResize"
+        Loaded="Window_Loaded" Background="{x:Null}"
+        KeyDown="Window_KeyDown" Closed="Window_Closed" WindowState="Maximized" Cursor="None">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -18,14 +17,14 @@
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
 
-        <Rectangle x:Name="Background" Fill="Black"
+        <Rectangle x:Name="Background" Fill="Transparent"
                    Grid.Column="0" Grid.ColumnSpan="2"/>
 
         <TextBlock 
             Text="12:00 AM" Padding="52 0 0 52" 
             VerticalAlignment="Bottom"
             Foreground="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}" 
-            FontWeight="Bold" FontSize="48"
+            FontWeight="Bold" FontSize="52"
             Loaded="Clock_Loaded"/>
         <Grid 
             x:Name="Panel" Grid.Column="1" 
@@ -35,23 +34,46 @@
                 <TranslateTransform x:Name="PanelTransform"/>
             </Grid.RenderTransform>
 
-            <Grid Margin="32 32 32 52">
+            <Grid.Effect>
+                <DropShadowEffect BlurRadius="75" RenderingBias="Quality" Direction="90"/>
+            </Grid.Effect>
+
+            <Grid Margin="32 32 52 52">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
-                
-                <TextBlock x:Name="TitleText" Grid.Row="0" Text="Titulo"
-                           FontWeight="Bold" FontSize="48"
-                           Foreground="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
-                
+
+                <StackPanel Orientation="Vertical">
+                    <TextBlock x:Name="TitleText" Grid.Row="0" Text="Titulo"
+                               FontWeight="Bold" FontSize="48"
+                               Foreground="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}" 
+                               TextWrapping="WrapWithOverflow">
+                        <TextBlock.RenderTransform>
+                            <TranslateTransform x:Name="TitleTransform"/>
+                        </TextBlock.RenderTransform>
+                    </TextBlock>
+
+                    <Separator Height="12" Background="{x:Null}" Foreground="{x:Null}"/>
+                </StackPanel>
+
                 <TextBlock x:Name="BodyText" Grid.Row="1"
                     Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." 
-                    FontWeight="SemiBold" FontSize="24"
+                    FontWeight="SemiBold" FontSize="28"
                     Foreground="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}" 
-                    TextWrapping="WrapWithOverflow"/>
+                    TextWrapping="WrapWithOverflow">
+                    <TextBlock.RenderTransform>
+                        <TranslateTransform x:Name="BodyTransform"/>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+
+                <Image x:Name="HintImage" Grid.Row="2" Source="/Media/bed.png" VerticalAlignment="Center" Height="256">
+                    <Image.RenderTransform>
+                        <TranslateTransform x:Name="HintImageTransform"/>
+                    </Image.RenderTransform>
+                </Image>
 
                 <StackPanel Grid.Row="3" Orientation="Horizontal" FlowDirection="RightToLeft">
                     <TextBlock Text="Press any button to close"
@@ -60,5 +82,7 @@
                 </StackPanel>
             </Grid>
         </Grid>
+
+        <Grid Grid.Column="0" Grid.ColumnSpan="2" Background="#7F000000"/>
     </Grid>
 </Window>

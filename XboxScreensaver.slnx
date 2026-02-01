@@ -1,4 +1,15 @@
 <Solution>
-  <Project Path="Screensaver/Screensaver.csproj" />
-  <Project Path="ScreensaverController/ScreensaverController.csproj" />
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+  </Configurations>
+  <Project Path="Models/Models.csproj" Id="d78cc953-99bb-4eec-8421-c9b28e34383b">
+    <Platform Solution="*|x64" Project="x64" />
+  </Project>
+  <Project Path="Screensaver/Screensaver.csproj">
+    <Platform Solution="*|x64" Project="x64" />
+  </Project>
+  <Project Path="ScreensaverController/ScreensaverController.csproj">
+    <Platform Solution="*|x64" Project="x64" />
+  </Project>
 </Solution>

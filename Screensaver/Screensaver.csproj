@@ -6,6 +6,62 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
+    <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Media\auto-update.png" />
+    <None Remove="Media\bed.png" />
+    <None Remove="Media\couch.png" />
+    <None Remove="Media\curve-arrow.png" />
+    <None Remove="Media\display-arrow-down.png" />
+    <None Remove="Media\energy-drink.png" />
+    <None Remove="Media\gamepad.png" />
+    <None Remove="Media\gears.png" />
+    <None Remove="Media\hdd.png" />
+    <None Remove="Media\headphones-rhythm.png" />
+    <None Remove="Media\high-definition.png" />
+    <None Remove="Media\high-temperature-alert.png" />
+    <None Remove="Media\improvement.png" />
+    <None Remove="Media\info.png" />
+    <None Remove="Media\it-alt.png" />
+    <None Remove="Media\network.png" />
+    <None Remove="Media\system-restore.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Data\TipsStrings.json" />
+    <EmbeddedResource Include="Media\auto-update.png" />
+    <EmbeddedResource Include="Media\bed.png" />
+    <EmbeddedResource Include="Media\couch.png" />
+    <EmbeddedResource Include="Media\curve-arrow.png" />
+    <EmbeddedResource Include="Media\display-arrow-down.png" />
+    <EmbeddedResource Include="Media\energy-drink.png" />
+    <EmbeddedResource Include="Media\gamepad.png" />
+    <EmbeddedResource Include="Media\gears.png" />
+    <EmbeddedResource Include="Media\hdd.png" />
+    <EmbeddedResource Include="Media\headphones-rhythm.png" />
+    <EmbeddedResource Include="Media\high-definition.png" />
+    <EmbeddedResource Include="Media\high-temperature-alert.png" />
+    <EmbeddedResource Include="Media\improvement.png" />
+    <EmbeddedResource Include="Media\info.png" />
+    <EmbeddedResource Include="Media\it-alt.png" />
+    <EmbeddedResource Include="Media\network.png" />
+    <EmbeddedResource Include="Media\system-restore.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Models\Models.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Installer.iss">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
 
 </Project>

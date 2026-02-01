@@ -1,0 +1,97 @@
+[
+  {
+    "Title": "Mantén tus drivers actualizados",
+    "Content": "Los drivers de la GPU, chipset y periféricos mejoran rendimiento, corrigen errores y optimizan juegos nuevos.",
+    "Image": "auto-update.png"
+  },
+  {
+    "Title": "Cuida la temperatura de tu PC",
+    "Content": "El sobrecalentamiento reduce el rendimiento. Asegúrate de tener buena ventilación, limpia el polvo y monitorear temperaturas.",
+    "Image": "high-temperature-alert.png"
+  },
+  {
+    "Title": "Usa un perfil de energía de alto rendimiento",
+    "Content": "En Windows, selecciona el plan Alto rendimiento o Máximo rendimiento para evitar limitaciones de CPU y GPU mientras juegas.",
+    "Image": "energy-drink.png"
+  },
+  {
+    "Title": "Ajusta los gráficos según tu hardware",
+    "Content": "No todo es “Ultra”. Ajustar sombras, antialiasing o distancia de renderizado puede darte muchos FPS extra sin perder calidad visual notable.",
+    "Image": "gears.png"
+  },
+  {
+    "Title": "Cierra programas en segundo plano",
+    "Content": "Navegadores, launchers y apps innecesarias consumen RAM y CPU. Menos procesos es igual a más recursos para el juego.",
+    "Image": "high-definition.png"
+  },
+  {
+    "Title": "Instala los juegos en un SSD",
+    "Content": "Los tiempos de carga se reducen drásticamente y el sistema se siente más fluido. Si es NVMe, todavía mejor.",
+    "Image": "hdd.png"
+  },
+  {
+    "Title": "Haz mantenimiento periódico",
+    "Content": "Limpia ventiladores, cambia pasta térmica cada cierto tiempo y revisa cables. Un PC limpio rinde mejor y dura más.",
+    "Image": "it-alt.png"
+  },
+  {
+    "Title": "Mantén el sistema operativo optimizado",
+    "Content": "Evita software innecesario al iniciar Windows, desactiva animaciones si tu PC es modesta y mantén el sistema actualizado..",
+    "Image": "system-restore.png"
+  },
+  {
+    "Title": "Usa la resolución nativa del monitor",
+    "Content": "Jugar fuera de la resolución nativa puede generar imagen borrosa o menor rendimiento. Ajusta bien resolución y escalado.",
+    "Image": "high-definition.png"
+  },
+  {
+    "Title": "Activa tecnologías como FreeSync o G-Sync",
+    "Content": "Estas eliminan el “screen tearing” y hacen que el juego se sienta mucho más fluido, especialmente si tus FPS varían.",
+    "Image": "info.png"
+  },
+  {
+    "Title": "Invierte en buen audio o auriculares gamer",
+    "Content": "Un buen sonido mejora la inmersión y te da ventaja competitiva al detectar pasos, disparos o direcciones.",
+    "Image": "headphones-rhythm.png"
+  },
+  {
+    "Title": "Aprende a monitorear tu rendimiento",
+    "Content": "FPS, uso de CPU/GPU y temperaturas te ayudan a detectar cuellos de botella y problemas antes de que empeoren.",
+    "Image": "curve-arrow.png"
+  },
+  {
+    "Title": "Ten cuidado con el overclocking",
+    "Content": "Puede mejorar rendimiento, pero mal hecho reduce la vida útil del hardware. Hazlo solo si sabes lo que estás tocando.",
+    "Image": "improvement.png"
+  },
+  {
+    "Title": "Prioriza conexión por cable (Ethernet)",
+    "Content": "El Wi-Fi puede ser inestable. Para juegos online, un cable LAN reduce latencia y pérdidas de paquetes.",
+    "Image": "network.png"
+  },
+  {
+    "Title": "Ajusta la sensibilidad dentro del juego",
+    "Content": "No todo depende del mouse o control. Configura la sensibilidad in-game para lograr precisión y consistencia.",
+    "Image": "gamepad.png"
+  },
+  {
+    "Title": "Mantén espacio libre en discos",
+    "Content": "Un SSD lleno pierde rendimiento. Intenta mantener al menos un 20% de espacio libre.",
+    "Image": "hdd.png"
+  },
+  {
+    "Title": "Descarga juegos y mods solo de fuentes confiables",
+    "Content": "Evita malware que pueda robar cuentas, afectar rendimiento o dañar tu sistema.",
+    "Image": "display-arrow-down.png"
+  },
+  {
+    "Title": "Cuida tu ergonomía",
+    "Content": "Una buena postura, altura correcta del monitor y descansos frecuentes evitan fatiga y lesiones a largo plazo.",
+    "Image": "couch.png"
+  },
+  {
+    "Title": "Jugar mejor también es saber descansar",
+    "Content": "Sesiones largas sin pausas bajan tu rendimiento real. Descansar también es parte del gaming competitivo.",
+    "Image": "bed.png"
+  }
+]
