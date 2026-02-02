@@ -1,6 +1,6 @@
 ﻿[Setup]
 AppName=XScreensaver for Windows
-AppVersion=2026.1.0
+AppVersion=2026.1.0.0
 DefaultDirName={sys}
 DisableDirPage=yes
 PrivilegesRequired=admin
