@@ -18,6 +18,11 @@ namespace Screensaver
             //saver.Closing += Saver_Closing;
         }
 
+        private void LaunchConfig()
+        {
+            MessageBox.Show("This screensaver has no options that you can set yet.", "No options", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
         private void Saver_Closing(object? sender, EventArgs e)
         {
             this.Shutdown();
@@ -58,7 +63,7 @@ namespace Screensaver
                     break;
 
                 case "/c":
-                    //ShowConfig();
+                    LaunchConfig();
                     break;
 
                 default:
