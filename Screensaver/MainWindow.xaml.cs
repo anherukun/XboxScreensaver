@@ -188,7 +188,18 @@ namespace Screensaver
             BodyText.Text = "";
 
             var asm = Assembly.GetExecutingAssembly();
-            var resourceName = $"Screensaver.Data.TipsStrings_{lang}.json";
+            var resourceName = String.Empty;
+
+            switch (lang)
+            {
+                case "es":
+                    resourceName = $"Screensaver.Data.TipsStrings_es.json";
+                    break;
+                default:
+                    resourceName = $"Screensaver.Data.TipsStrings_en.json";
+                    break;
+            }
+
             using var stream = asm.GetManifestResourceStream(resourceName);
 
             if (stream == null)
