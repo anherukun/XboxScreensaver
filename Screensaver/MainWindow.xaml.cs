@@ -1,4 +1,5 @@
 ﻿using Models;
+using Screensaver.Helpers;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
@@ -22,41 +23,6 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace Screensaver
 {
-    internal enum AccentState
-    {
-        ACCENT_DISABLED = 0,
-        ACCENT_ENABLE_GRADIENT = 1,
-        ACCENT_ENABLE_TRANSPARENTGRADIENT = 2,
-        ACCENT_ENABLE_BLURBEHIND = 3,
-        ACCENT_ENABLE_ACRYLICBLURBEHIND = 4,
-        ACCENT_INVALID_STATE = 5
-    }
-
-    [StructLayout(LayoutKind.Sequential)]
-    internal struct AccentPolicy
-    {
-        public AccentState AccentState;
-        public uint AccentFlags;
-        public uint GradientColor;
-        public uint AnimationId;
-    }
-
-    [StructLayout(LayoutKind.Sequential)]
-    internal struct WindowCompositionAttributeData
-    {
-        public WindowCompositionAttribute Attribute;
-        public IntPtr Data;
-        public int SizeOfData;
-    }
-
-    internal enum WindowCompositionAttribute
-    {
-        // ...
-        WCA_ACCENT_POLICY = 19
-        // ...
-    }
-
-
     [StructLayout(LayoutKind.Sequential)]
     struct XInputState
     {
@@ -76,7 +42,6 @@ namespace Screensaver
         public short sThumbRY;
     }
 
-
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -85,28 +50,17 @@ namespace Screensaver
         [DllImport("xinput1_4.dll")]
         static extern int XInputGetState(int index, out XInputState state);
 
-        [DllImport("user32.dll")]
-        internal static extern int SetWindowCompositionAttribute(IntPtr hwnd, ref WindowCompositionAttributeData data);
-
-        private uint _blurOpacity = 128;
-        public double BlurOpacity
-        {
-            get { return _blurOpacity; }
-            set { _blurOpacity = (uint)value; EnableBlur(); }
-        }
-
-        private uint _blurBackgroundColor = 0x990000; /* BGR color format */
-
-
+        string lang = "";
+        string culture = "";
         public MainWindow()
         {
             InitializeComponent();
             SetupScreensaver();
 
-            var culture = CultureInfo.CurrentUICulture;
+            var cultureInfo = CultureInfo.CurrentUICulture;
 
-            string idioma = culture.TwoLetterISOLanguageName; // "es", "en"
-            string cultura = culture.Name;
+            lang = cultureInfo.TwoLetterISOLanguageName; // "es", "en"
+            culture = cultureInfo.Name;
         }
 
         private void SetupScreensaver()
@@ -115,49 +69,33 @@ namespace Screensaver
             //ResizeMode = ResizeMode.NoResize;
             //WindowState = WindowState.Maximized;
             //Topmost = true;
-            ShowInTaskbar = false;
             //Cursor = Cursors.None;
-        }
+            ShowInTaskbar = false;
 
-        internal void EnableBlur()
-        {
-            var windowHelper = new WindowInteropHelper(this);
+            var wallpaper = WallpaperHelper.GetWallpaperPath();
+            var image = new BitmapImage();
+            image.BeginInit();
+            image.UriSource = new Uri(wallpaper);
+            image.CacheOption = BitmapCacheOption.OnLoad;
+            image.EndInit();
+            image.Freeze();
 
-            var accent = new AccentPolicy();
-            accent.AccentState = AccentState.ACCENT_ENABLE_BLURBEHIND;
-            accent.GradientColor = (_blurOpacity << 24) | (_blurBackgroundColor & 0xFFFFFF);
-
-            var accentStructSize = Marshal.SizeOf(accent);
-
-            var accentPtr = Marshal.AllocHGlobal(accentStructSize);
-            Marshal.StructureToPtr(accent, accentPtr, false);
-
-            var data = new WindowCompositionAttributeData();
-            data.Attribute = WindowCompositionAttribute.WCA_ACCENT_POLICY;
-            data.SizeOfData = accentStructSize;
-            data.Data = accentPtr;
-
-            SetWindowCompositionAttribute(windowHelper.Handle, ref data);
-
-            Marshal.FreeHGlobal(accentPtr);
+            WallpaperImage.Source = image;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            EnableBlur();
-
-            //Panel.RenderTransform.Transform(new System.Windows.Point(Panel.ActualWidth, 0));
             PanelTransform.X = Panel.ActualWidth;
 
             var animation = new DoubleAnimation
             {
-                From = 0,
-                To = 0.6,
+                From = 0.6,
+                To = 1.0,
                 Duration = TimeSpan.FromSeconds(0.3),
             };
             animation.Completed += ShowPanelAnimation;
 
-            Background.BeginAnimation(OpacityProperty, animation);
+            WallpaperImage.BeginAnimation(OpacityProperty, animation);
 
             RefreshHintAndTipView();
             GamepadHandler();
@@ -250,7 +188,8 @@ namespace Screensaver
             BodyText.Text = "";
 
             var asm = Assembly.GetExecutingAssembly();
-            using var stream = asm.GetManifestResourceStream("Screensaver.Data.TipsStrings.json");
+            var resourceName = $"Screensaver.Data.TipsStrings_{lang}.json";
+            using var stream = asm.GetManifestResourceStream(resourceName);
 
             if (stream == null)
                 return;

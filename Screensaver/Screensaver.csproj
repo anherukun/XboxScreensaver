@@ -10,6 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Data\TipsStrings_en.json" />
     <None Remove="Media\auto-update.png" />
     <None Remove="Media\bed.png" />
     <None Remove="Media\couch.png" />
@@ -30,7 +31,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Data\TipsStrings.json" />
+    <EmbeddedResource Include="Data\TipsStrings_en.json" />
+    <EmbeddedResource Include="Data\TipsStrings_es.json" />
     <EmbeddedResource Include="Media\auto-update.png" />
     <EmbeddedResource Include="Media\bed.png" />
     <EmbeddedResource Include="Media\couch.png" />

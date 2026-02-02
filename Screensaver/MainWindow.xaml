@@ -17,8 +17,12 @@
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
 
-        <Rectangle x:Name="Background" Fill="Transparent"
-                   Grid.Column="0" Grid.ColumnSpan="2"/>
+        <Image x:Name="WallpaperImage"
+               Grid.Column="0" Grid.ColumnSpan="2">
+            <Image.Effect>
+                <BlurEffect Radius="25"/>
+            </Image.Effect>
+        </Image>
 
         <TextBlock 
             Text="12:00 AM" Padding="52 0 0 52" 
@@ -69,7 +73,7 @@
                     </TextBlock.RenderTransform>
                 </TextBlock>
 
-                <Image x:Name="HintImage" Grid.Row="2" Source="/Media/bed.png" VerticalAlignment="Center" Height="256">
+                <Image x:Name="HintImage" Grid.Row="2" Source="/Media/bed.png" VerticalAlignment="Center" Height="192">
                     <Image.RenderTransform>
                         <TranslateTransform x:Name="HintImageTransform"/>
                     </Image.RenderTransform>

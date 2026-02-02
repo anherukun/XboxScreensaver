@@ -1,0 +1,97 @@
+[
+  {
+    "Title": "Keep your drivers up to date",
+    "Content": "GPU, chipset, and peripheral drivers improve performance, fix bugs, and optimize new games.",
+    "Image": "auto-update.png"
+  },
+  {
+    "Title": "Take care of your PC temperature",
+    "Content": "Overheating reduces performance. Make sure you have good airflow, clean dust, and monitor temperatures.",
+    "Image": "high-temperature-alert.png"
+  },
+  {
+    "Title": "Use a high-performance power plan",
+    "Content": "In Windows, select the High performance or Ultimate performance plan to avoid CPU and GPU limitations while gaming.",
+    "Image": "energy-drink.png"
+  },
+  {
+    "Title": "Adjust graphics according to your hardware",
+    "Content": "Not everything has to be set to “Ultra.” Adjusting shadows, antialiasing, or render distance can give you many extra FPS without noticeable visual quality loss.",
+    "Image": "gears.png"
+  },
+  {
+    "Title": "Close background programs",
+    "Content": "Browsers, launchers, and unnecessary apps consume RAM and CPU. Fewer processes mean more resources for the game.",
+    "Image": "high-definition.png"
+  },
+  {
+    "Title": "Install games on an SSD",
+    "Content": "Loading times are drastically reduced and the system feels much smoother. NVMe is even better.",
+    "Image": "hdd.png"
+  },
+  {
+    "Title": "Perform regular maintenance",
+    "Content": "Clean fans, replace thermal paste periodically, and check cables. A clean PC performs better and lasts longer.",
+    "Image": "it-alt.png"
+  },
+  {
+    "Title": "Keep the operating system optimized",
+    "Content": "Avoid unnecessary startup software, disable animations if your PC is modest, and keep the system up to date.",
+    "Image": "system-restore.png"
+  },
+  {
+    "Title": "Use your monitor’s native resolution",
+    "Content": "Playing outside the native resolution can cause blurry images or lower performance. Adjust resolution and scaling properly.",
+    "Image": "high-definition.png"
+  },
+  {
+    "Title": "Enable technologies like FreeSync or G-Sync",
+    "Content": "These eliminate screen tearing and make gameplay feel much smoother, especially when your FPS fluctuates.",
+    "Image": "info.png"
+  },
+  {
+    "Title": "Invest in good audio or gaming headphones",
+    "Content": "Good sound improves immersion and gives you a competitive edge by detecting footsteps, shots, and directions.",
+    "Image": "headphones-rhythm.png"
+  },
+  {
+    "Title": "Learn how to monitor your performance",
+    "Content": "FPS, CPU/GPU usage, and temperatures help you detect bottlenecks and issues before they get worse.",
+    "Image": "curve-arrow.png"
+  },
+  {
+    "Title": "Be careful with overclocking",
+    "Content": "It can improve performance, but if done incorrectly it reduces hardware lifespan. Only do it if you know what you’re doing.",
+    "Image": "improvement.png"
+  },
+  {
+    "Title": "Prioritize a wired (Ethernet) connection",
+    "Content": "Wi-Fi can be unstable. For online gaming, a LAN cable reduces latency and packet loss.",
+    "Image": "network.png"
+  },
+  {
+    "Title": "Adjust in-game sensitivity",
+    "Content": "Not everything depends on the mouse or controller. Configure in-game sensitivity for better precision and consistency.",
+    "Image": "gamepad.png"
+  },
+  {
+    "Title": "Keep free space on your drives",
+    "Content": "A full SSD loses performance. Try to keep at least 20% free space.",
+    "Image": "hdd.png"
+  },
+  {
+    "Title": "Download games and mods only from trusted sources",
+    "Content": "Avoid malware that can steal accounts, affect performance, or damage your system.",
+    "Image": "display-arrow-down.png"
+  },
+  {
+    "Title": "Take care of your ergonomics",
+    "Content": "Good posture, proper monitor height, and frequent breaks prevent fatigue and long-term injuries.",
+    "Image": "couch.png"
+  },
+  {
+    "Title": "Playing better also means knowing when to rest",
+    "Content": "Long sessions without breaks lower your real performance. Resting is also part of competitive gaming.",
+    "Image": "bed.png"
+  }
+]
