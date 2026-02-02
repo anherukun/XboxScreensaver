@@ -21,6 +21,7 @@ namespace Screensaver
         private void LaunchConfig()
         {
             MessageBox.Show("This screensaver has no options that you can set yet.", "No options", MessageBoxButton.OK, MessageBoxImage.Information);
+            this.Shutdown();
         }
 
         private void Saver_Closing(object? sender, EventArgs e)
@@ -46,30 +47,33 @@ namespace Screensaver
 
             if (e.Args.Length == 0)
             {
-                RunSaver();
+                //RunSaver();
 
-                //ShowConfig();
+                LaunchConfig();
                 return;
             }
 
-            switch (e.Args[0].ToLower())
+            if (e.Args[0].ToLower().Contains("/c"))
             {
-                case "/s":
-                    RunSaver();
-                    break;
-
-                case "/p":
-                    Preview(e.Args);
-                    break;
-
-                case "/c":
-                    LaunchConfig();
-                    break;
-
-                default:
-                    //ShowConfig();
-                    break;
+                LaunchConfig();
+                return;
             }
+            
+            else
+                switch (e.Args[0].ToLower())
+                {
+                    case "/s":
+                        RunSaver();
+                        break;
+
+                    case "/p":
+                        Preview(e.Args);
+                        break;
+
+                    default:
+                        LaunchConfig();
+                        break;
+                }
         }
     }
 }
